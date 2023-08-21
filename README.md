@@ -24,6 +24,7 @@ To use webpage, simply click generate and answer the prompts that follow, the pa
 
 
 ## Screenshot and link to deployed application
+https://bzinsky.github.io/Password-Generator/
 
 
 ![Screenshot of Application](./Assets/Screenshot.png)
