@@ -10,7 +10,7 @@ let numberExample = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
 
 let builtArray = [...lowerAlphabetExample, ...upperAlphabetExample, ...characterExample, ...numberExample]
 
-let generatedLetterIndex = math.floor(math.random() * builtArray.length)
+// let generatedLetterIndex = math.floor(math.random() * builtArray.length)
 
 // math.floor(math.random()*builtArray.length)
 function generatePassword() {
@@ -20,16 +20,25 @@ function generatePassword() {
 
   }
 
+  if (confirm("Uppercase Allowed?")) {
+    builtArray = [...builtArray, ...upperAlphabetExample];
+  }
 
+  if (confirm("Special Characters Allowed?")) {
+    builtArray = [...builtArray, ...characterExample];
+  }
 
+  let password = "";
+  let passwordLength = prompt("how many characters in the password?");
+  // passwordLength = math.max(8, math.min(128, passwordLength));
 
-  let passwordLength = prompt("how many characters in the password?")
-  let password = ""
   for (let index = 0; index < passwordLength; index++) {
-    password += "x";
+    const randomIndex = builtArray[Math.floor(builtArray.length * Math.random())];
+    password += randomIndex;
 
   }
-return password;
+  // console.log("Password:" + password)
+  return password;
 }
 
 function writePassword() {
@@ -38,8 +47,20 @@ function writePassword() {
 
   passwordText.value = password;
 
-  }
+}
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+// user clicks button
+  // addeventlistener to button
+// get password length
+  // add prompt for pw length
+// character types
+  // add confirm for characters
+  // create array of chosen characters
+  // randomly select characters from array
+  // display characters
+// user gets password
